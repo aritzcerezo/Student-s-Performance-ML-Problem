@@ -61,7 +61,7 @@ Ambos modelos fueron evaluados utilizando métricas adecuadas para cada tipo de 
 
 1. **data_cleaning**: Es un Jupyther Notebook en el que se importan los datos y se limpian para la creación y prodesado de los modelos.
 2. **gpa_predictor**: Es un Jupyther Notebook en el que se importan los datos limpios y se prueban y analizan distintos Regresores Lineales para la obtención de un modelo consistente que predice el GPA de los alumnas y que ha sido guardado como **linear_regression_model**.
-3.**gradeClass_predictor**: Es un Jupyther Notebook en el que se importan los datos limpios y se crea un clasificador multiclase que predice la clase de las calificaciones de los alumnos mediante RandomForest.
+3. **gradeClass_predictor**: Es un Jupyther Notebook en el que se importan los datos limpios y se crea un clasificador multiclase que predice la clase de las calificaciones de los alumnos mediante RandomForest.
 
 ## Conclusión
 
