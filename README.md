@@ -1,5 +1,5 @@
 # Student-s-Performance-ML-Problem / Estudio de Machine Learning sobre Datos de Estudiantes
-![]](image.png)
+![](image.png)
 ## Descripción del Proyecto
 
 Este proyecto consiste en dos modelos de machine learning que utilizan datos de estudiantes para predecir el rendimiento académico de los mismos. El primer modelo es un regresor lineal que predice el GPA (Grade Point Average) de los estudiantes. El segundo modelo es un clasificador multiclase que predice automáticamente la clase de calificación del estudiante ('A', 'B', 'C', 'D', 'F').
