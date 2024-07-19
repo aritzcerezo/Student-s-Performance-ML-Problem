@@ -14,6 +14,7 @@ directorio_actual = os.getcwd()
 
 # Título de la aplicación
 st.title("Predicción del GPA mediante Regresión Lineal")
+st.image("image.png",  use_column_width=True)
 
 # Explicación del modelo
 st.header("Descripción del Modelo")
@@ -66,13 +67,22 @@ prediction_scaled = model.predict(input_df)
 prediction = target_scaler.inverse_transform(prediction_scaled.reshape(-1, 1))
 
 # Mostrar los resultados
-st.header("Parámetros de Entrada")
-st.write(input_df)
+if prediction[0][0]<0:
+    prediction[0][0]=0
 
-st.header("Predicción del GPA")
-st.write(prediction)
+st.header(f"Predicción del GPA:     {round(prediction[0][0],2)}")
 
-st.write("""
-El valor mostrado arriba es la predicción del GPA basado en los parámetros ingresados. 
-El modelo utiliza una regresión lineal para estimar cómo estos parámetros influyen en el rendimiento académico del estudiante.
-""")
+def respuesta(val):
+    if val < 2.0:
+        return "El GPA predicho es bastante bajo. Es recomendable aumentar las horas de estudio y reducir las ausencias para mejorar el rendimiento académico."
+    elif 2.0 <= val < 3.0:
+        return "El GPA predicho es regular. Hay espacio para mejorar. Considere aumentar el apoyo parental y mantener una buena asistencia."
+    elif 3.0 <= val < 3.5:
+        return "El GPA predicho es bueno. Sigue manteniendo buenos hábitos de estudio y asistencia."
+    elif 3.5 <= val < 3.7:
+        return "El GPA predicho es muy bueno. ¡Sigue así! Continúa con los buenos hábitos de estudio y asistencia."
+    else:
+        return "¡Excelente! El GPA predicho es sobresaliente. Continúa con el excelente trabajo y asegúrate de mantener estos hábitos positivos."
+    
+mensaje_respuesta = respuesta(round(prediction[0][0],2))
+st.write(mensaje_respuesta)
